@@ -14,11 +14,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
-       // collectionView.register(CollectionReusableView.self , forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionReusableView.identifier)
-//        collectionView.register(CollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionReusableView.identifier)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -28,7 +25,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
         cell.imageView.image = UIImage(named: "Emma Stone")
-       // cell.testBanner.image = UIImage(named: "Emma Stone")
         return cell
     
     }
@@ -60,17 +56,5 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
            assert(false, "Invalid element type")
          }
     }
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        if kind == UICollectionView.elementKindSectionHeader {
-//            return  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionReusableView.identifier, for: indexPath) as! CollectionReusableView
-//        }else {
-//            fatalError()
-//        }
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        <#code#>
-//    }
-
-
 }
 
